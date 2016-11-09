@@ -17,26 +17,22 @@
 
     <nav class="navbar navbar-inverse">
       <ul class="nav nav-pills">
-        <li role="presentation"><a href="#">Recent Thoughts</a></li>
-        <li role="presentation"><a href="#">New Thoughts</a></li>
+        <li role="presentation"><a href="#recent">Recent Thoughts</a></li>
+        <li role="presentation"><a href="#new">New Thoughts</a></li>
       </ul>
     </nav>
 
 
-  <main class='new'>
-
+  <main id='new'>
     <section class='submit-form'>
-
       <h2 class='important'>New Thought</h2>
       <p class='important p'>What are you thinking about? Share it with the World!</p>
       <input type="text" class="form-control" placeholder="What are you thinking..">
       <button type="button" class="btn btn-primary">Submit</button>
-
     </section>
   </main>
 
-  <main class='recent'>
-
+  <main id='recent'>
     <nav>
       <ul>
         <li>One</li>
@@ -44,14 +40,13 @@
         <li>Three</li>
       </ul>
     </nav>
-
   </main>
 
 
 
     <script src='../node_modules/jquery/dist/jquery.js'></script>
     <script src="https://code.jquery.com/jquery-3.1.1.js"></script>
-    <script src='javascript/thoughterUI.js'></script>
+    <script src='javascript/thoughterNav.js'></script>
     <script src='javascript/thoughterData.js'></script>
   </body>
 
