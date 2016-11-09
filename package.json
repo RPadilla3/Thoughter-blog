@@ -1,0 +1,29 @@
+{
+  "name": "thoughter-blog",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RPadilla3/Thoughter-blog.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RPadilla3/Thoughter-blog/issues"
+  },
+  "homepage": "https://github.com/RPadilla3/Thoughter-blog#readme",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^3.1.2"
+  },
+  "dependencies": {
+    "jquery": "^3.1.1"
+  }
+}
