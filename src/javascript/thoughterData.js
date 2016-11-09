@@ -9,7 +9,7 @@
       method: 'POST',
       dataType: 'json',
       data: JSON.stringify({
-        'content': ''
+        content: $('.form-control').val()
       }),
       headers: {
         'content-type':'application/json'
@@ -18,10 +18,13 @@
     })
     .done(function handleSuccess(data){
       console.log('success', data);
+      alert('SUCCESS BITCH')
     })
     .fail(function handleFailure(xhr){
       console.log('failed', xhr);
     });
   });
+
+
 
 }());
