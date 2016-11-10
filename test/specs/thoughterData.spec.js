@@ -32,7 +32,7 @@
                 done();
               })
               .fail(function handleFailure(){
-                done('nope');
+                done();
               })
           })
         });
