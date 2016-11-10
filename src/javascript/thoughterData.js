@@ -3,6 +3,7 @@
   window.thoughter = window.thoughter || {};
 
   window.thoughter.createThought = createThought;
+  window.thoughter.recieveThought = recieveThought;
 
     /**
      * Ajax call to create a new Thought
@@ -28,6 +29,24 @@
       .fail(function handleFailure(xhr){
         console.log('failed', xhr);
       });
+    };
+
+    function recieveThought() {
+
+      return $.ajax({
+        url: 'https://thoughter.herokuapp.com/api/Thoughts',
+        method: 'GET',
+        dataType: 'json',
+        headers: {
+          'content-type':'application/json'
+        }
+      })
+      .done(function handleYes(data) {
+        console.log('success', data);
+      })
+      .fail(function handleNo(xhr){
+        console.log('failure', xhr);
+      })
     }
 
 
