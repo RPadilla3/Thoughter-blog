@@ -11,8 +11,8 @@
         it('Should know that the namespace exists', function(){
           expect(window.thoughter).to.be.a('object')
         });
-        
+
     });
 
-
+    
 }());

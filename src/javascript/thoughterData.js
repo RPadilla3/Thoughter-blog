@@ -2,15 +2,14 @@
   'use strict';
   window.thoughter = window.thoughter || {};
 
-  window.thoughter.createThoughter = createThoughter;
+  window.thoughter.createThought = createThought;
 
     /**
      * Ajax call to create a new Thought
-     * and put those into a <ul>
      *  @param {String} createThoughter the value of the input
      *  @return {[type]} [description]
      */
-    function createThoughter(){
+    function createThought(){
 
       $.ajax({
         url: 'https://thoughter.herokuapp.com/api/Thoughts',
@@ -29,9 +28,7 @@
       .fail(function handleFailure(xhr){
         console.log('failed', xhr);
       });
-    };
+    }
 
 
-
-    
 }());
