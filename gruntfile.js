@@ -4,6 +4,8 @@ module.exports = function(grunt) {
 
   grunt.initConfig({
 
+    clean: [ '/build' ],
+
     jshint: {
       options: {
         jshintrc: '.jshintrc',
@@ -22,13 +24,41 @@ module.exports = function(grunt) {
           'build/css/styles.css': 'src/sass/main.scss'
         }
       }
+    },
+
+  copy: {
+
+    html: {
+      files: [
+        {
+          expand: true,
+          cwd: 'src/',
+          src: [ 'index.html' ],
+          dest: 'build/'
+        }
+      ]
+    },
+
+  vendorjs: {
+    files: [
+    {
+      expand: true,
+      cwd:'node_modules/jquery/dist',
+      src: [ 'jquery.js' ],
+      dest: 'build/js/'
     }
+  ]
+  }
+
+},
 
   });
 
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-sass');
+  grunt.loadNpmTasks('grunt-contrib-clean');
+  grunt.loadNpmTasks('grunt-contrib-copy');
 
   // grunt.registerTask( 'default', ['jshint'] );
-  grunt.registerTask('default', ['jshint', 'sass'] );
+  grunt.registerTask('default', ['clean', 'jshint', 'sass', 'copy'] );
 };
