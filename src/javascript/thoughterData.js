@@ -9,14 +9,14 @@
      *  @param {String} createThoughter the value of the input
      *  @return {[type]} [description]
      */
-    function createThought(){
+    function createThought(thought){
 
-      $.ajax({
+    return $.ajax({
         url: 'https://thoughter.herokuapp.com/api/Thoughts',
         method: 'POST',
         dataType: 'json',
         data: JSON.stringify({
-          content: $('.form-control').val()
+          content: thought
         }),
         headers: {
           'content-type':'application/json'
