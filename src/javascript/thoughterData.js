@@ -11,7 +11,7 @@
      *  @param {String} createThoughter the value of the input
      *  @return {[type]} [description]
      */
-    function createThought(thought){
+    function createThought(thought) {
 
     return $.ajax({
         url: 'https://thoughter.herokuapp.com/api/Thoughts',
@@ -59,7 +59,7 @@
      * Returns a specific thought, based on the Id of the thoughter
      * @return {[type]} [description]
      */
-    function whosThought(){
+    function recieveThoughtID() {
 
       return $.ajax({
         url: 'https://thoughter.herokuapp.com/api/Thoughts/:id',
