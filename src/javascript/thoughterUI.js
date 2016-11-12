@@ -7,4 +7,12 @@
     window.thoughter.createThought();
 
   });
+
+
+  // // CHANGE THIS ELEMENT
+  // $('.recent').on('click', function recieveThought(event){
+  //   event.preventDefault();
+  //   window.thoughter.recieveThought();
+
+  // });
 }());
