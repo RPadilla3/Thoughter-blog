@@ -40,17 +40,24 @@ module.exports = function(grunt) {
     },
 
   vendorjs: {
+
     files: [
     {
-      expand: true,
-      cwd:'node_modules/jquery/dist',
-      src: [ 'jquery.js' ],
-      dest: 'build/js/'
-    }
-  ]
+        expand: true,
+        cwd:'node_modules/jquery/dist',
+        src: [ 'jquery.js' ],
+        dest: 'build/js/'
+      }
+    ]
   }
 
 },
+  concat: {
+    javascript: {
+      src: ['src/javascript/**/*.js'],
+      dest: 'build/js/thought.js'
+    }
+  }
 
   });
 
@@ -58,7 +65,8 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-contrib-copy');
+  grunt.loadNpmTasks('grunt-contrib-concat')
 
   // grunt.registerTask( 'default', ['jshint'] );
-  grunt.registerTask('default', ['clean', 'jshint', 'sass', 'copy'] );
+  grunt.registerTask('default', ['clean', 'jshint', 'sass', 'copy', 'concat'] );
 };
