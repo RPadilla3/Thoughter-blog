@@ -54,4 +54,23 @@
     }
 
 
+    function whosThought(){
+
+      return $.ajax({
+        url: 'https://thoughter.herokuapp.com/api/Thoughts/:id',
+        method: 'GET',
+        dataType: 'json',
+        headers: {
+          'content-type':'application/json'
+        }
+      })
+      .done(function success(data){
+        console.log('success', data);
+      })
+      .fail(function failure(xhr){
+        console.log('failed', xhr);
+      });
+    }
+
+
 }());
