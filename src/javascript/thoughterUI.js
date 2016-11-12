@@ -15,4 +15,11 @@
   //   window.thoughter.recieveThought();
 
   // });
+
+
+  $('.').on('click', function recieveThoughtId(event){
+    event.preventDefault();
+    window.thoughter.recieveThoughtID();
+  });
+  
 }());

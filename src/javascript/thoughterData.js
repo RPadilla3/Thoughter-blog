@@ -4,6 +4,7 @@
 
   window.thoughter.createThought = createThought;
   window.thoughter.recieveThought = recieveThought;
+  window.thoughter.recieveThoughtID = recieveThoughtID;
 
     /**
      * Ajax call to create a new Thought
@@ -54,6 +55,10 @@
     }
 
 
+    /**
+     * Returns a specific thought, based on the Id of the thoughter
+     * @return {[type]} [description]
+     */
     function whosThought(){
 
       return $.ajax({
