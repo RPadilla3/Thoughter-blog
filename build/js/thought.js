@@ -4,6 +4,7 @@
 
   window.thoughter.createThought = createThought;
   window.thoughter.recieveThought = recieveThought;
+  window.thoughter.recieveThoughtID = recieveThoughtID;
 
     /**
      * Ajax call to create a new Thought
@@ -17,7 +18,7 @@
         method: 'POST',
         dataType: 'json',
         data: JSON.stringify({
-          content: thought
+          content: $('.form-control').val()
         }),
         headers: {
           'content-type':'application/json'
@@ -54,6 +55,29 @@
     }
 
 
+    /**
+     * Returns a specific thought, based on the Id of the thoughter
+     * @return {[type]} [description]
+     */
+    function whosThought(){
+
+      return $.ajax({
+        url: 'https://thoughter.herokuapp.com/api/Thoughts/:id',
+        method: 'GET',
+        dataType: 'json',
+        headers: {
+          'content-type':'application/json'
+        }
+      })
+      .done(function success(data){
+        console.log('success', data);
+      })
+      .fail(function failure(xhr){
+        console.log('failed', xhr);
+      });
+    }
+
+
 }());
 
 (function() {
@@ -81,10 +105,17 @@
   });
 
 
-  // CHANGE THIS ELEMENT
-  $('.recent').on('click', function recieveThought(event){
-    event.preventDefault();
-    window.thoughter.recieveThought();
+  // // CHANGE THIS ELEMENT
+  // $('.recent').on('click', function recieveThought(event){
+  //   event.preventDefault();
+  //   window.thoughter.recieveThought();
 
-  });
+  // });
+
+
+  // $('.').on('click', function recieveThoughtId(event){
+  //   event.preventDefault();
+  //   window.thoughter.recieveThoughtID();
+  // });
+  //
 }());
