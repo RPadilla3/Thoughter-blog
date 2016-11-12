@@ -29,8 +29,12 @@
       .fail(function handleFailure(xhr){
         console.log('failed', xhr);
       });
-    };
+    }
 
+    /**
+     * Ajax GET call to return all new Thoughts
+     * @return {String} [description]
+     */
     function recieveThought() {
 
       return $.ajax({
@@ -46,7 +50,7 @@
       })
       .fail(function handleNo(xhr){
         console.log('failure', xhr);
-      })
+      });
     }
 
 
