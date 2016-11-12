@@ -17,7 +17,7 @@
         method: 'POST',
         dataType: 'json',
         data: JSON.stringify({
-          content: thought
+          content: $('.form-control').val()
         }),
         headers: {
           'content-type':'application/json'
