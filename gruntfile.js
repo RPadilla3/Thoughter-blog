@@ -57,6 +57,25 @@ module.exports = function(grunt) {
       src: ['src/javascript/**/*.js'],
       dest: 'build/js/thought.js'
     }
+  },
+
+  connect: {
+    testig: {
+      options: {
+        port: 6969,
+        base: '.'
+      }
+    }
+  },
+
+  mocha: {
+    alltests: {
+      options: {
+        url: [
+          'https://localhost:6969/test/thoughterTester.html'
+        ]
+      }
+    }
   }
 
   });
@@ -65,8 +84,10 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-contrib-copy');
-  grunt.loadNpmTasks('grunt-contrib-concat')
+  grunt.loadNpmTasks('grunt-contrib-concat');
+  grunt.loadNpmTasks('grunt-contrib-connect');
+  grunt.loadNpmTasks('grunt-mocha');
 
-  // grunt.registerTask( 'default', ['jshint'] );
-  grunt.registerTask('default', ['clean', 'jshint', 'sass', 'copy', 'concat'] );
+  grunt.registerTask( 'test', ['jshint','connect', 'mocha'] );
+  grunt.registerTask('default', ['clean', 'test', 'jshint', 'sass', 'copy', 'concat'] );
 };
