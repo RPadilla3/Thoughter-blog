@@ -23,7 +23,7 @@
 
       function appendThoughts(thoughts) {
         thoughts.forEach(function(thoughter) {
-          $('#recent').append($('<li>' + thoughter.content + '</li>'))
+          $('#recent').append($('<p>' + thoughter.content + '<p>'))
         });
       }
 
