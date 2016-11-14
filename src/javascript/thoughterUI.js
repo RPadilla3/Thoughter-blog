@@ -1,6 +1,7 @@
 (function() {
     'use strict';
     window.thoughter = window.thoughter || {};
+    window.thoughter.appendThoughts = appendThoughts;
 
     $('.submit-form').on('submit', function formSubmission(event) {
         event.preventDefault();
@@ -14,7 +15,17 @@
       event.preventDefault();
       window.thoughter.recieveThought();
     });
+      /**
+       * [appendThoughts description]
+       * @param  {[type]} thoughts [description]
+       * @return {[type]}          [description]
+       */
 
+      function appendThoughts(thoughts) {
+        thoughts.forEach(function(thoughter) {
+          $('#recent').append($('<li>' + thoughter.content + '</li>'))
+        });
+      }
 
 
     // $('.').on('hashchange', function recieveThoughtId(event){
