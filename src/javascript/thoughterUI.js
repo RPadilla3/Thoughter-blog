@@ -9,15 +9,15 @@
     });
 
 
-    // // CHANGE THIS ELEMENT
-    // $('.recent').on('click', function recieveThought(event){
-    //   event.preventDefault();
-    //   window.thoughter.recieveThought();
+    // CHANGE THIS ELEMENT
+    $('#recent').on('hashchange', function recieveThought(event){
+      event.preventDefault();
+      window.thoughter.recieveThought();
+    });
 
-    // });
 
 
-    // $('.').on('click', function recieveThoughtId(event){
+    // $('.').on('hashchange', function recieveThoughtId(event){
     //   event.preventDefault();
     //   window.thoughter.recieveThoughtID();
     // });
